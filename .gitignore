@@ -1,0 +1,49 @@
+# === [ Visual Studio / C# / WPF ] ===
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.sln.docstates
+*.userosscache
+
+# === [ C++ / MSVC 빌드 결과물 ] ===
+debug/
+release/
+x64/
+x86/
+*.pdb
+*.ilk
+*.aps
+*.ncb
+*.sdf
+*.ipch
+*.tlog
+*.lastbuildstate
+*.obj
+*.lib
+*.dll
+
+# === [ Python / Isaac 관련 ] ===
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# === [ Data & Logs ] ===
+*.log
+*.pcd
+*.ply
+*.bin
+# (PCD나 바이너리 데이터 파일이 너무 크면 무시하는 것이 좋습니다)
+
+# === [ OS & IDE ] ===
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

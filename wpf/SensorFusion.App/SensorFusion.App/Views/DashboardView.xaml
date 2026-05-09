@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="SensorFusion.App.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="1000"
+             Background="#1E1E1E">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#2D2D30" CornerRadius="5" Padding="15,10" Margin="0,0,0,10">
+            <DockPanel>
+                <TextBlock Text="SENSOR FUSION CONSOLE v1.0" Foreground="White" FontWeight="Bold" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Latency: " Foreground="#AAA"/>
+                    <TextBlock Text="{Binding Latency}" Foreground="LimeGreen" Margin="0,0,20,0"/>
+                    <TextBlock Text="FPS: " Foreground="#AAA"/>
+                    <TextBlock Text="{Binding Fps}" Foreground="Yellow"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Raw Image Stream (2D)" Margin="0,0,5,0" Foreground="White" BorderBrush="#3F3F46">
+                <Grid Background="Black">
+                    <Image Source="{Binding DisplayImage}" Stretch="Uniform"/>
+                    <TextBlock Text="Waiting for stream..." Foreground="#555" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="1" Header="Point Cloud Data (3D)" Margin="5,0,0,0" Foreground="White" BorderBrush="#3F3F46">
+                <Grid Background="#0A0A0A">
+                    <TextBlock Text="3D Visualization Engine Ready" Foreground="#555" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <GroupBox Grid.Row="2" Header="System Logs" Margin="0,10,0,0" Foreground="White" BorderBrush="#3F3F46">
+            <ListBox Background="Transparent" BorderThickness="0" Foreground="#CCC">
+                <ListBoxItem Content="[INFO] System initialized."/>
+                <ListBoxItem Content="[INFO] WebRTC Bridge Ready."/>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel VerticalAlignment="Bottom"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </GroupBox>
+    </Grid>
+</UserControl>
