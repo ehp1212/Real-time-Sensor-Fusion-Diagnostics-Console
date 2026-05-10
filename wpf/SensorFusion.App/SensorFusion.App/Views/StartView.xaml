@@ -87,6 +87,7 @@
 
                 <TextBlock Text="{Binding ConnectionStatus}" HorizontalAlignment="Center" 
                            Foreground="DodgerBlue" Margin="0,15,0,0" FontStyle="Italic"/>
+
             </StackPanel>
         </Border>
     </Grid>
